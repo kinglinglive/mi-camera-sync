@@ -120,7 +120,7 @@ def sync_video():
         ffmpeg_path = ffmpeg.get_ffmpeg_exe()
 
         # 创建并运行FFmpeg命令
-        command = f"{ffmpeg_path} -stats -progress pipe:1 -f concat -safe 0 -i filelist.txt -c:v copy -c:a aac {date}.mp4"
+        command = f"{ffmpeg_path} -f concat -safe 0 -i filelist.txt -c:v copy -c:a aac {date}.mp4"
         
         subprocess.run(command, shell=True)
 
